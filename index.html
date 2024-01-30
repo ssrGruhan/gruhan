@@ -8,20 +8,37 @@
 	<meta property="og:image" content="sample.png">
 	<title>Gruhan</title>
 
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NS2E57T1PZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script language="javascript">
+		function addItem() {
+			var newItem = document.createElement("div");
+			newItem.innerHTML = document.getElementById("box").value;
+			newItem.onclick = removeItem;
+			document.getElementById("list").appendChild(newItem);
+			saveList();
+		}
 
-  gtag('config', 'G-NS2E57T1PZ');
-</script>
-	
+		function removeItem() {
+			document.getElementById("list").removeChild(this);
+			saveList();
+		}
+
+		function saveList() {
+			var c = document.getElementById("list").innerHTML;
+			localStorage.storedList = c;
+		}
+
+		function loadList() {
+			document.getElementById("list").innerHTML = localStorage.storedList;
+			for (var i = 0; i < list.children.length; i++) {
+				list.children[i].onclick = removeItem;
+		    }
+		}
+    </script>
 </head>
 
-<body bgcolor="white">
-	<p>
+
+<body>
+	<p>	
 		<div style="text-align:initial">
 			&nbsp;<h1 style="color:black">Gruhan</h1>
 			<img src="https://raw.githubusercontent.com/ssrGruhan/gruhan/4921bbb5c1f27399458b5d3abc3d4569f5837ebd/resources/Profile.png"
@@ -74,11 +91,27 @@
 		</p>
 	-->
 
+	<br/>
+	<br/>
+	<!-- start input -->
+	<input type="text" id="box" value="Type here to add task"/>
+	<br/>
+	<input type="button" value="Add item" onclick="addItem();"/>
+    <br/>
+
+	<div id="list"></div>
+	<script language="javascript">
+		if (localStorage.storedList) {
+			loadList();
+	}
+    </script>
+	<!-- end input -->
+
 	<div style="clear: both;"></div>
 
 	<p>
 		<div style="text-align:initial">
-			<h2 style="color:black">일정</h2>
+			<!--&nbsp;<h2 style="color:black">일정</h2>-->
 
 			<h3 style="color:black"> 2024</h3>
 			01/23(화)14:00 강진 '칠량에 스미다'<br />
@@ -87,12 +120,11 @@
 			05/01(월)12:00 이천 '도자기축제'<br />
 
 			<h3 style="color:black"> 2022</h3>
-		    	12/24(토)17:00 밀양 <a href="https://www.mycf.or.kr/nmprogram/perform/default.php?mod=o&idx=709&page=1" target="_blank">'어쩌다 크리스마스' </a>
+		    12/24(토)17:00 밀양 <a href="https://www.mycf.or.kr/nmprogram/perform/default.php?mod=o&idx=709&page=1" target="_blank">'어쩌다 크리스마스' </a>
 
-			
 			<!--Schedule Table-->
 			<table border="0" align="left">
-				<pre style="text-align:left">
+					<pre style="text-align:left">
 12/18(Sun)(TY)Restart Platform
 11/20(Sum)(TY)Cafe.Geonilda
 10/23(Sun)(TY)Misu ocean park
@@ -109,13 +141,12 @@
 07/09(Sat)(KJ)Expo Park
 06/11(Sat)(SJ)'O'Bridge
 05/21(Sat)(AD)Modi684 Platform
-				</pre>
+					</pre>
 			</table>
 			<!--Schedule Table-->
 
 		</div>
 	</p>
-
 
 </body>
 </html>
