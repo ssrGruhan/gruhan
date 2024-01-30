@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Personal">
-    <meta property="og:description" content="Welcome">
-    <meta property="og:image" content="sample.png">
-    <title>Gruhan</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Personal">
+	<meta property="og:description" content="Welcome">
+	<meta property="og:image" content="sample.png">
+	<title>Personal</title>
+
+	<script language="javascript">function addItem() {
+			var newItem = document.createElement("div");
+			newItem.innerHTML = document.getElementById("box").value;
+			newItem.onclick = removeItem;
+			document.getElementById("list").appendChild(newItem);
+			saveList();
+		}
+
+		function removeItem() {
+			document.getElementById("list").removeChild(this);
+			saveList();
+		}
+
+		function saveList() {
+			var c = document.getElementById("list").innerHTML;
+			localStorage.storedList = c;
+		}
+
+		function loadList() {
+			document.getElementById("list").innerHTML = localStorage.storedList;
+			for (var i = 0; i < list.children.length; i++) {
+				list.children[i].onclick = removeItem;
+		    }
+		}</script>
 </head>
 
 <body>
 	<p>
-	    <div style="text-align:center">
+		<div style="text-align:center">
 
-		<a href="https://gruhan.com/notice.html">Notice</a>
-		<br />
-	    </div>
+			<a href="https://gruhan.com/notice.html">Notice</a>
+			<br />
+		</div>
 	</p>
 
 	<p>
-	    <div style="text-align:center">
-		&nbsp;<h2>Schedule</h2>
-		<pre>
+		<div style="text-align:center">
+			&nbsp;<h2>Schedule</h2>
+			<pre>
 2022
 -------------------
 02/28 : Uk(3/28)
@@ -33,7 +58,24 @@
 05/00 : Chea
 08/00 : Ah
 		</pre>
-	    </div>
+		</div>
 	</p>
+
+		<div style="text-align:center">
+	<!-- start input -->
+	<input type="text" id="box" value="For local stored data" />
+	<br />
+	<input type="button" value="Add item" onclick="addItem();" />
+	<br />
+
+	<div id="list"></div>
+	<script language="javascript">if (localStorage.storedList) {
+			loadList();
+		}</script>
+	<!-- end input -->
+		</div>
+
+
 </body>
+
 </html>

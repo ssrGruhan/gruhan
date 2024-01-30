@@ -8,34 +8,7 @@
 	<meta property="og:image" content="sample.png">
 	<title>Gruhan</title>
 
-	<script language="javascript">
-		function addItem() {
-			var newItem = document.createElement("div");
-			newItem.innerHTML = document.getElementById("box").value;
-			newItem.onclick = removeItem;
-			document.getElementById("list").appendChild(newItem);
-			saveList();
-		}
-
-		function removeItem() {
-			document.getElementById("list").removeChild(this);
-			saveList();
-		}
-
-		function saveList() {
-			var c = document.getElementById("list").innerHTML;
-			localStorage.storedList = c;
-		}
-
-		function loadList() {
-			document.getElementById("list").innerHTML = localStorage.storedList;
-			for (var i = 0; i < list.children.length; i++) {
-				list.children[i].onclick = removeItem;
-		    }
-		}
-    </script>
 </head>
-
 
 <body>
 	<p>	
@@ -60,21 +33,26 @@
 			<br />
 
 			<!--youtube icon-->
-			<img src="https://github.com/ssrGruhan/gruhan/blob/main/resources/icon_youtube.png?raw=true"
-				style="float: left;  margin-right: 20px; margin-bottom: 10px;  width:50px; height:50px;" />
 			
-			<br/>
-			<a href="https://www.youtube.com/channel/UCqAFqVI-bPfMhTJNOe169HA" target="_blank">Youtube</a>
 			<br />
-			
+			<a href="https://www.youtube.com/channel/UCqAFqVI-bPfMhTJNOe169HA" target="_blank">
+				<img src="https://github.com/ssrGruhan/gruhan/blob/main/resources/icon_youtube.png?raw=true"
+				style="float: left;  margin-right: 20px; margin-bottom: 10px;  width:50px; height:50px;" />
+				Youtube
+		    </a>
+
+			<br />
+			<br />
 			<br />
 			<br />
 
 			<!--soundcloud icon-->
+			<a href="https://soundcloud.com/ssr-gruhan" target="_blank">
 			<img src="https://github.com/ssrGruhan/gruhan/blob/main/resources/icon_soundcloud.jpeg?raw=true"
 				style="float: left;  margin-right: 20px; margin-bottom: 10px;  width:50px; height:30px;" />
+			SoundCloud
+		    </a>
 			
-			<a href="https://soundcloud.com/ssr-gruhan" target="_blank">SoundCloud</a>
 			<br />
 		</div>
 	</p>
@@ -93,19 +71,7 @@
 
 	<br/>
 	<br/>
-	<!-- start input -->
-	<input type="text" id="box" value="For local stored data"/>
-	<br/>
-	<input type="button" value="Add item" onclick="addItem();"/>
-    <br/>
-
-	<div id="list"></div>
-	<script language="javascript">
-		if (localStorage.storedList) {
-			loadList();
-	}
-    </script>
-	<!-- end input -->
+	
 
 	<div style="clear: both;"></div>
 
