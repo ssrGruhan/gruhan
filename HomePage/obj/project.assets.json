@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/user/Projects/HomePage/HomePage/HomePage.csproj",
+      "projectUniqueName": "/Users/user/Documents/GitHub/gruhan/HomePage/HomePage.csproj",
       "projectName": "HomePage",
-      "projectPath": "/Users/user/Projects/HomePage/HomePage/HomePage.csproj",
+      "projectPath": "/Users/user/Documents/GitHub/gruhan/HomePage/HomePage.csproj",
       "packagesPath": "/Users/user/.nuget/packages/",
-      "outputPath": "/Users/user/Projects/HomePage/HomePage/obj/",
+      "outputPath": "/Users/user/Documents/GitHub/gruhan/HomePage/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/user/.config/NuGet/NuGet.Config"
