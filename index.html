@@ -8,14 +8,50 @@
 	<meta property="og:image" content="sample.png">
 	<title>Gruhan</title>
 
+	<script language="javascript">
+		function addItem() {
+			var newItem = document.createElement("div");
+			newItem.innerHTML = document.getElementById("box").value;
+			newItem.onclick = removeItem;
+			document.getElementById("list").appendChild(newItem);
+			saveList();
+		}
+
+		function removeItem() {
+			document.getElementById("list").removeChild(this);
+			saveList();
+		}
+
+		function saveList() {
+			var c = document.getElementById("list").innerHTML;
+			localStorage.storedList = c;
+		}
+
+		function loadList() {
+			document.getElementById("list").innerHTML = localStorage.storedList;
+			for (var i = 0; i < list.children.length; i++) {
+				list.children[i].onclick = removeItem;
+		    }
+		}
+    </script>
 </head>
 
+
+
+<!-- start body -->
 <body>
-	<p>	
-		<div style="text-align:initial">
-			&nbsp;<h1 style="color:black">Gruhan</h1>
+	<div style="text-align:center">
+		<h1 style="color:black">Gruhan</h1>
+	</div>
+
+	<table border="0" align="center">
+		<tr>
+			<td>
+		<div style="text-align:left">
 			<img src="https://raw.githubusercontent.com/ssrGruhan/gruhan/4921bbb5c1f27399458b5d3abc3d4569f5837ebd/resources/Profile.png"
-				style="float: left;  margin-right: 20px; margin-bottom: 10px;  width:200px; height:200px;" />
+				width="200";"/>
+				<!--style="float: left;  margin-right: 20px; margin-bottom: 10px; width:200px; height:200px;"-->
+
 			<!--
 			<img src="https://raw.githubusercontent.com/ssrGruhan/gruhan/f7ecba7175beb9f48e17343767664b90b2c78130/resources/2022%E1%84%8B%E1%85%A9%E1%84%87%E1%85%A5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A5.jpeg"
 				 style="float: left;  margin-right: 20px; margin-bottom: 10px;  width:200px; height:200px;" />
@@ -31,66 +67,104 @@
 			
 			Phone : +82 10-3682-5237 
 			<br />
+		</div>
+			</td>
+		</tr>
 
+	</table>
+
+	<table border="0" align="center">
+		<tr>
+			<td>
 			<!--youtube icon-->
-			
-			<br />
 			<a href="https://www.youtube.com/channel/UCqAFqVI-bPfMhTJNOe169HA" target="_blank">
-				<img src="https://github.com/ssrGruhan/gruhan/blob/main/resources/icon_youtube.png?raw=true"
-				style="float: left;  margin-right: 20px; margin-bottom: 10px;  width:50px; height:50px;" />
-				Youtube
-		    </a>
-
-			<br />
-			<br />
-			<br />
-			<br />
-
+			<img src="https://github.com/ssrGruhan/gruhan/blob/main/resources/icon_youtube.png?raw=true" width="50";"/>
+			</a>
+			</td>
+			<td>
 			<!--soundcloud icon-->
 			<a href="https://soundcloud.com/ssr-gruhan" target="_blank">
-			<img src="https://github.com/ssrGruhan/gruhan/blob/main/resources/icon_soundcloud.jpeg?raw=true"
-				style="float: left;  margin-right: 20px; margin-bottom: 10px;  width:50px; height:30px;" />
-			SoundCloud
-		    </a>
-			
-			<br />
-		</div>
-	</p>
+			<img src="https://github.com/ssrGruhan/gruhan/blob/main/resources/icon_soundcloud.jpeg?raw=true" width="50";"/>
+			</a>
+			</td>
+		</tr>
+	</table>
 
+	<table border="0" align="center">
+		<tr>
+			<td>
+				<pre style="text-align:center">
+.
+.
+.
+
+Gruhan(그러한)은 떠오르는 소소한 감정들을 노래합니다.
+밴드와 솔로로 오랜기간 활동을 이어오고 있습니다. 
+
+주요 경력은 
+'포크페스티벌' 시민가요제 최우수상
+대구MBC '음악공장' 공연
+‘강진, 살자' 예술인 레지던시 선정 
+등이 있습니다
+				</pre>
+
+	    </td>
+	</tr>
+	</table>
+
+	<!-- start input -->
 	<!--
-		<p>
-			<div style="text-align:center">
-				&nbsp;<h2 style="color:white">Links</h2>
-				<a href="https://www.youtube.com/channel/UCqAFqVI-bPfMhTJNOe169HA" target="_blank">Youtube</a>
-				<br />
-				<a href="https://soundcloud.com/ssr-gruhan" target="_blank">SoundCloud</a>
-				<br />
-			</div>
-		</p>
-	-->
-
+	<input type="text" id="box" value="For Web Browser Stored Task"/>
 	<br/>
-	<br/>
-	
+	<input type="button" value="Add item" onclick="addItem();"/>
+    <br/>
 
-	<div style="clear: both;"></div>
+	<div id="list"></div>
+	<script language="javascript">
+		if (localStorage.storedList) {
+			loadList();
+	}
+    </script>
+	<!-- end input -->
 
-	<p>
-		<div style="text-align:initial">
-			<!--&nbsp;<h2 style="color:black">일정</h2>-->
 
+
+	<!-- bulletin -->
+
+
+
+	<!-- schedule -->
+			<table border="1" align="center">
+				<tr>
+					<td>
 			<h3 style="color:black"> 2024</h3>
-			01/23(화)14:00 강진 '칠량에 스미다'<br />
-
+			01/23(화)14:00 강진 '칠량에 스미다' 초청공연<br />
+					</td>
+				</tr>
+				<tr>
+					<td>
 			<h3 style="color:black"> 2023</h3>
-			05/01(월)12:00 이천 '도자기축제'<br />
-
+			05/01(월)12:00 이천 '도자기축제' 공연<br />
+					</td>
+				</tr>
+				<tr>
+					<td>
 			<h3 style="color:black"> 2022</h3>
 		    12/24(토)17:00 밀양 <a href="https://www.mycf.or.kr/nmprogram/perform/default.php?mod=o&idx=709&page=1" target="_blank">'어쩌다 크리스마스' </a>
+			</br>
+			10/22-23 통영 ‘거리의 악사' 공연
+			</br>
+			10/14(금) 경북 바이오엑스포 초청공연
+			</br>
+			07/31(일) 포천 프린지페스티벌 공연
+			</br>
+			07/09(토) 경주 엑스포공원 초청공연
+			</br>
+			06/11(토) 세종 걷다보니 버스킹 공연
+			</br>
+			05/21(토) 안동 모디684 공연
 
-			<!--Schedule Table-->
-			<table border="0" align="left">
-					<pre style="text-align:left">
+<!--
 12/18(Sun)(TY)Restart Platform
 11/20(Sum)(TY)Cafe.Geonilda
 10/23(Sun)(TY)Misu ocean park
@@ -107,12 +181,38 @@
 07/09(Sat)(KJ)Expo Park
 06/11(Sat)(SJ)'O'Bridge
 05/21(Sat)(AD)Modi684 Platform
-					</pre>
+-->
+					</td>
+				</tr>
 			</table>
-			<!--Schedule Table-->
+	<!-- end schedule -->
 
-		</div>
-	</p>
+	<!-- picture -->
+	<table>
+    
+		<tr>
+			<td>
+				<img src="" />
+		    </td>
+			<td>
+				<img src="" />
+		    </td>
+			<td>
+				<img src="" />
+		    </td>
+			<td>
+				<img src="" />
+		    </td>
+			<td>
+				<img src="" />
+		    </td>
+		
+		</tr>
+    
+    </table>
+	<!-- end picture -->
 
-</body>
+
+<!-- end -->
+	</body>
 </html>

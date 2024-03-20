@@ -1,52 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta property="og:title" content="Personal">
-	<meta property="og:description" content="Welcome">
-	<meta property="og:image" content="sample.png">
-	<title>Personal</title>
-
-	<script language="javascript">function addItem() {
-			var newItem = document.createElement("div");
-			newItem.innerHTML = document.getElementById("box").value;
-			newItem.onclick = removeItem;
-			document.getElementById("list").appendChild(newItem);
-			saveList();
-		}
-
-		function removeItem() {
-			document.getElementById("list").removeChild(this);
-			saveList();
-		}
-
-		function saveList() {
-			var c = document.getElementById("list").innerHTML;
-			localStorage.storedList = c;
-		}
-
-		function loadList() {
-			document.getElementById("list").innerHTML = localStorage.storedList;
-			for (var i = 0; i < list.children.length; i++) {
-				list.children[i].onclick = removeItem;
-		    }
-		}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Personal">
+    <meta property="og:description" content="Welcome">
+    <meta property="og:image" content="sample.png">
+    <title>Gruhan</title>
 </head>
 
 <body>
 	<p>
-		<div style="text-align:center">
+	    <div style="text-align:center">
+		&nbsp;<h2>Personal Needs</h2>
 
-			<a href="https://gruhan.com/notice.html">Notice</a>
-			<br />
-		</div>
+		<a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">Gmail</a>
+		<br />
+		<a href="https://calendar.google.com/calendar/u/0/r?tab=rc">Schedule</a>
+		<br />
+		<a href="https://artnuri.or.kr/">Artnuri</a>
+		<br />
+		<a href="http://www.xn--vk1br78aera606b.com/pbbs/bbs/board.php?bo_table=notice&wr_id=32">Time Table(Daeil)</a>
+		<br />
+		<a href="https://raw.githubusercontent.com/ssrGruhan/gruhan/main/ty_time_table.jpg">Time Table(Images)</a>
+		<br />
+		<a href="https://gruhan.com/notice.html">Notice</a>
+		<br />
+	    </div>
 	</p>
 
 	<p>
-		<div style="text-align:center">
-			&nbsp;<h2>Schedule</h2>
-			<pre>
+	    <div style="text-align:center">
+		&nbsp;<h2>Schedule</h2>
+		<pre>
 2022
 -------------------
 02/28 : Uk(3/28)
@@ -58,26 +44,7 @@
 05/00 : Chea
 08/00 : Ah
 		</pre>
-		</div>
+	    </div>
 	</p>
-
-		<div style="text-align:center">
-	<!-- start input -->
-			TODO
-	<br/>
-	<input type="text" id="box" value="Add" />
-	<br />
-	<input type="button" value="ADD ITEM" onclick="addItem();" />
-	<br />
-
-	<div id="list"></div>
-	<script language="javascript">if (localStorage.storedList) {
-			loadList();
-		}</script>
-	<!-- end input -->
-		</div>
-
-
 </body>
-
 </html>
