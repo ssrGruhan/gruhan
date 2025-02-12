@@ -1,19 +1,18 @@
 ﻿<Properties StartupConfiguration="{4AE8DF55-8CD6-422E-9F15-0DE20AA0BF7C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="personal.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="work.html">
     <Files>
       <File FileName="Index.html" Line="267" Column="11" />
       <File FileName="notice.html" Line="1" Column="1" />
-      <File FileName="personal.html" Line="20" Column="37" />
+      <File FileName="personal.html" Line="26" Column="9" />
+      <File FileName="work.html" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HomePage" expanded="True">
             <Node name="Solution Items" expanded="True">
-              <Node name="Work" expanded="True" />
-              <Node name="/Users/user/Documents/GitHub/gruhan/personal.html" selected="True" />
+              <Node name="/Users/user/Documents/GitHub/gruhan/work.html" selected="True" />
             </Node>
-            <Node name="HomePage" expanded="True" />
           </Node>
         </State>
       </Pad>
